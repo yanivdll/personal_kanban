@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <form method="post">
+    {% csrf_token %}
+        {{form.as_p}}
+            <div class="container">
+                <input type="submit" value="update">
+                <button><a href="{% url "board:delete_task" task.board.pk task.pk %}">Delete task</a></button>
+            </div>
+
+    
+    </form>
+
+
+</div>
+
+{% endblock content %}

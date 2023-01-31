@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block content%}
+
+{% if boards %}
+<div class="container">
+    <ul>
+        {% for board in boards %}
+            <div class="card"><a href="/board/{{ board.id }}">{{ board.name }}</a></div>
+        {% endfor %}
+        {% else %}
+            <div class="card">No boards found</div>
+        {% endif %}
+    </ul>
+</div>
+
+<p>Is staf? {{user.is_staff}}</p>
+<p>You have visited this page {{ number_of_visits }} time{{ number_of_visits|pluralize }}.</p>
+{% endblock %}
