@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "sass": "^1.57.1"
+  },
+  "scripts": {
+    "build": "sass --watch static/scss/main.scss:static/css/style.css",
+    "sass": "sass src/scss:public",
+    "sass:dev": "sass --watch --embed-source-map static/scss/main.scss:static/css/style.css",
+    "sass:prod": "sass --no-source-map --style compressed src/scss:public/css"
+  }
+}

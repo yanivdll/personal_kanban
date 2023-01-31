@@ -1,0 +1,137 @@
+body {
+  background-color: #f5f5f5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #198754;
+  padding: 1rem;
+  text-align: center;
+}
+
+header ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.container > div {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: gray;
+}
+
+.task.card {
+  /* background-color: rgb(133, 236, 216); */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.task.card:hover {
+  background-color: rgb(133, 236, 216);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.to-do-task {
+  background-color: rgb(241, 171, 33);
+}
+
+.in-progress-task {
+  background-color: rgb(212, 212, 57);
+}
+
+.done-task {
+  background-color: rgb(59, 241, 84);
+}
+
+label {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.columnHeader-addTask {
+  position: relative;
+  right: 1px;
+  flex: 0 0 36px;
+  background-color: transparent;
+  background-size: 24px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 36px;
+  margin: 0 -6px 0 0;
+  outline: 0;
+  padding: 0;
+  width: 36px;
+}
+
+.columnHeader-addTask:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.columnHeader-addTask:hover:after,
+.columnHeader-addTask:hover:before {
+  background: #36b345;
+}
+
+.columnHeader-addTask:active,
+.columnHeader-addTask:focus {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.columnHeader-addTask:active:after,
+.columnHeader-addTask:active:before,
+.columnHeader-addTask:focus:after,
+.columnHeader-addTask:focus:before {
+  background: #36b345;
+}
+
+.columnHeader-addTask:after,
+.columnHeader-addTask:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  background: #3dc54e;
+  border-radius: 1px;
+}
+
+.columnHeader-addTask:before {
+  left: 7px;
+  right: 7px;
+  top: 16px;
+  bottom: 16px;
+}
+
+.columnHeader-addTask:after {
+  left: 16px;
+  right: 16px;
+  top: 7px;
+  bottom: 7px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../scss/main.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;EACI;;;AAGJ;EACI;EACA;EACA;EACA;EACA;;;AAIJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;;;AAIJ;EACI;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;;;AAIJ;AACI;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;AAAA;EAEI;;;AAGJ;AAAA;EAEI;;;AAGJ;AAAA;AAAA;AAAA;EAII;;;AAGJ;AAAA;EAEI;EACA;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA%22,%22file%22:%22style.css%22%7D */
