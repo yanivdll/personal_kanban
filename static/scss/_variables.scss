@@ -1,0 +1,83 @@
+// _variables.scss
+
+$fern: #659770; // (dark green)
+$silver: #c0c0c0; // (light gray)
+$almond: #efd9a9; // (light brown)
+$purple-pink: #d381c3; // (purple-pink)
+$dark-navy: #003366; //(dark navy blue)
+
+
+// Colors
+
+// Color palette based on https: //www.npscoalition.org/
+// $primary-color: #018385;
+// $secondary-color: #2570d1;
+// $tertiary-color: #f6e7c6;
+// $quaternary-color: #f4cf70;
+// $quinary-color: #4d4d4d;
+// $white-color: #ffffff;
+// $black-color: #000000;
+// $background-color: #F4E3BA;
+
+// Color palette based on https://www.npscoalition.org/
+$primary-color: #093532;
+$secondary-color: #ef8451;
+$tertiary-color: #f2ebe4;
+$quaternary-color: #347362;
+$quinary-color: #6b8483;
+$white-color: #ffffff;
+$black-color: #000000;
+// $background-color: #F4E3BA;
+
+$header-background-color: $primary-color;
+$navigation-background-color: $quaternary-color;
+$navigation-hover-color: $secondary-color;
+$background-color: $tertiary-color;
+$header-text-color: $white-color;
+$body-text-color: $black-color;
+$button-text-color: $white-color;
+$button-color: $secondary-color;
+$button-hover-color: $quaternary-color;
+
+//Typography
+$font-stack: Lora, Poppins, sans-serif;
+// $font-stack: "Helvetica Neue, Helvetica, Arial, sans-serif";
+
+// Font sizes
+$base-font-size: 16px; // 1rem
+$font-size-smallest: 1rem; //16px
+$font-size-small: 1.125rem; //18px
+$font-size-medium: 1.25rem; //20px
+$font-size-large: 1.5rem; //24px
+$font-size-xlarge: 1.75rem; //28px
+$font-size-xxlarge: 2.5rem; //40px
+$font-size-huge: 3.125rem; //50px
+
+// Spacing
+$line-height: 1.5em; //24px
+$space-small: 0.5em; //8px 
+$space-medium: 1em; // 16px;
+$space-large: 2em; // 32px;
+
+$margin-small: $space-small;
+$margin-medium: $space-medium;
+$margin-large: $space-large;
+
+$padding-small: $space-small;
+$padding-medium: $space-medium;
+$padding-large: $space-large;
+
+@mixin card ($width: 200px, $height: 200px) {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    width: $width;
+    height: $height;
+    box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+}
+
+@mixin container ($width: 100%, $margin: 0 auto, $padding: 0) {
+    width: $width;
+    margin: $margin;
+    padding: $padding;
+}

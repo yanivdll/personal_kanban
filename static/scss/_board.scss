@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1em;
+    margin: $margin-large $margin-small;
+}
+
+.column {
+    width: 100%;
+    margin: 0;
+    background-color: rgb(245, 243, 238);
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    margin-top: 0;
+    padding: $padding-small $padding-medium;
+}

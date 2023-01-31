@@ -1,0 +1,42 @@
+footer {
+    width: 100%;
+    margin-top: $space-small;
+    background-color: $primary-color;
+    color: $white-color;
+    text-transform: uppercase;
+}
+
+
+nav.footer-menu {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-menu a,
+.site-footer p {
+    color: $white-color;
+    font-size: $font-size-smallest;
+    padding: $padding-small;
+    display: block;
+}
+
+.footer-menu ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin-top: 0;
+
+    li {
+        display: inline;
+        cursor: pointer;
+        align-self: flex-end;
+    }
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}

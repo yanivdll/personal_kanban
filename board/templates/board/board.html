@@ -1,23 +1,31 @@
 {% extends "base.html" %} 
 {% load static %}
+{% block title %}
+    {{board.name}}
+{% endblock %}
 
 {% block content%}
 
 <div class="container">
     {% for column in board.columns.all %}
 
-            <div>
-                <div class="conteainer">
-                    <h2>{{column.title}}</h2>
-                    <a class="columnHeader-addTask" aria-label="Add task" href="{% url "board:create_task" board.pk column.pk %}" ></a>
+            <div class="column">
+                <div class="flex-container column-header">
+                    <h3>{{column.title}}</h3>
+                    <a href="{% url "board:create_task" board.pk column.pk %}" >
+                        <div class="plus">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                        </div>
+                    </a>
                 </div>
                 {% for task in column.tasks.all %}
-                    <div class="task card"><a href="{% url "board:update_task" board.pk task.pk %}">{{task.title}}</a></div>
+                    <a href="{% url "board:update_task" board.pk task.pk %}"><div class="task card">{{task.title}}</div></a>
                 {% endfor %}
             </div>
     {% endfor %}
     <div class=""><div class="container">
-        <button><a href="{% url "board:create_column" board.pk %}"><i class="fa-solid fa-circle-plus"></i>Add Column</a></button>
+        <button><a href="{% url "board:create_column" board.pk %}"><i class="fa-solid fa-circle-plus"></i></a></button>
     </div></div>
 </div>
 

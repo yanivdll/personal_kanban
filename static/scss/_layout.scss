@@ -1,0 +1,49 @@
+//_layout.scss
+
+/*********************************/
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+section h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-item {
+    width: 100%;
+    align-items: center;
+    margin: auto auto;
+
+    // the generic img selector is too broad and is affecting both the images of the team memebers and of the hero image in the page.php template.
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    // The following rule is targeting only the hero image in the page.php template.
+    img.page-hero {
+        width: 100%;
+        float: left;
+    }
+}
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 1em;
+    // background: rgb(213, 235, 194);
+    margin-top: 10px;
+    // padding: 10px;
+}
+
+.flex-item {
+    flex: 1 1 250px;
+    margin-top: 10px;
+}

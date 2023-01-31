@@ -1,0 +1,221 @@
+header {
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+
+    div {
+        background-color: $header-background-color;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        margin: 0 auto;
+
+        padding: $padding-small;
+
+        a {
+            text-align: left;
+            width: auto;
+            margin-left: $margin-small;
+            margin-right: $margin-small;
+
+            img {
+                max-width: 50px;
+
+            }
+        }
+
+        h1 {
+            width: 60%;
+            text-align: left;
+            color: #ffffff;
+            font-size: $font-size-smallest;
+            font-weight: 600;
+        }
+    }
+}
+
+header svg {
+    width: 3em;
+    margin-top: -.6em;
+    cursor: pointer;
+
+}
+
+.site-logo {
+    color: $white-color;
+}
+
+// Top menu
+
+nav.page-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background: $background-color;
+    box-shadow: -1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+    height: 100vh;
+    width: 50%;
+    z-index: 99;
+    text-transform: uppercase;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+ul.menu {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 5em;
+}
+
+.menu a {
+    color: black;
+    padding-top: $space-medium;
+    padding-bottom: $space-medium;
+    padding-left: $space-medium;
+    padding-right: $space-medium;
+    display: block;
+    font-size: $font-size-smallest;
+}
+
+.menu a:hover {
+    background: $secondary-color;
+}
+
+.menu-icon .bar1,
+.menu-icon .bar2,
+.menu-icon .bar3 {
+    width: 28px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px 0;
+    transition: 0.4s;
+    z-index: 999;
+    padding: 0;
+}
+
+.menu-icon,
+.check-button {
+    display: block;
+    z-index: 999;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+button.check-button:hover {
+    background-color: none;
+}
+
+
+.check-button.sticky {
+    position: fixed;
+    right: 5%;
+    top: 20px;
+    z-index: 999;
+}
+
+.show-dropdown {
+    transform: translateX(0%) !important;
+}
+
+main.show-dropdown {
+    transform: translateZ(0);
+    transform: translateX(-50%) !important;
+    transition: transform 0.5s ease-in-out;
+}
+
+.animate-button .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-4px, 4px);
+    transform: rotate(-45deg) translate(-4px, 4px);
+    background-color: $black-color;
+}
+
+.animate-button .bar2 {
+    opacity: 0;
+}
+
+.animate-button .bar3 {
+    -webkit-transform: rotate(45deg) translate(-7px, -7px);
+    transform: rotate(45deg) translate(-7px, -7px);
+    background-color: $black-color;
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        width: 100%;
+        color: white;
+        text-transform: uppercase;
+
+        div {
+            background-color: $header-background-color;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin: 0 auto;
+
+            padding: $padding-small;
+
+            a {
+                text-align: left;
+                width: auto;
+                margin-left: $margin-small;
+                margin-right: $margin-large;
+
+                img {
+                    max-width: 100px;
+                }
+            }
+
+            h1 {
+                width: 60%;
+                text-align: left;
+                color: $white-color;
+                font-size: $font-size-xlarge;
+                font-weight: 600;
+            }
+        }
+    }
+
+    nav.page-menu {
+        position: static;
+        background: $navigation-background-color;
+        height: auto;
+        width: auto;
+        z-index: 99;
+        text-transform: uppercase;
+        transform: translateX(0%);
+        transition: none;
+    }
+
+    ul.menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+        height: 100%;
+    }
+
+    .menu a {
+        color: $white-color;
+        display: block;
+        height: 100%;
+    }
+
+    .menu a:hover {
+        background: $navigation-hover-color;
+    }
+
+    .menu-icon .bar1,
+    .menu-icon .bar2,
+    .menu-icon .bar3 {
+        display: none;
+    }
+
+    .menu-icon,
+    .check-button {
+        display: none;
+    }
+
+}

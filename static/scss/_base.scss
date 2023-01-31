@@ -1,0 +1,99 @@
+// _base.scss
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Make sure container takes up the full height of the viewport */
+
+    font-family: $font-stack;
+    background-color: $background-color;
+    font-size: $font-size-medium;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    color: $primary-color;
+    // margin: $margin-large auto;
+}
+
+h1 {
+    font-size: $font-size-xlarge;
+}
+
+h2 {
+    font-size: $font-size-xxlarge;
+}
+
+h3 {
+    font-size: $font-size-xlarge;
+}
+
+
+html,
+body,
+ul,
+ol,
+li,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
+
+
+p {
+    line-height: $line-height;
+}
+
+main {
+    transform: translateZ(0);
+    transition: transform 0.5s ease-in-out;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    background-color: $button-color;
+    cursor: pointer;
+    padding: $padding-medium;
+    border-radius: 5px;
+    font-size: $font-size-smallest;
+    text-transform: uppercase;
+    // transition: background-color 0.3s ease-in-out;
+    border: none;
+    box-shadow: 1px 2px 3px 4px rgba(12, 12, 12, 0.2);
+    color: $button-text-color;
+
+    a {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        color: $button-text-color;
+        font-size: $font-size-smallest;
+        font-weight: 600;
+    }
+}
+
+button:hover {
+    background-color: $button-hover-color;
+}

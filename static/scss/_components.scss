@@ -1,0 +1,50 @@
+.plus:hover {
+    background-color: lightgrey;
+}
+
+.plus {
+    position: relative;
+    right: 1px;
+    flex: 0 0 36px;
+    background-color: transparent;
+    background-size: 24px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 36px;
+    margin: 0 -6px 0 0;
+    outline: 0;
+    padding: 0;
+    width: 36px;
+
+    .bar1,
+    .bar2 {
+        width: 25px;
+        height: 4px;
+        background-color: rgb(255, 255, 255);
+        margin: 5px 0;
+    }
+
+
+    .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-1px, 3px);
+        transform: rotate(0deg) translate(5px, 16px);
+        background-color: green;
+    }
+
+    .bar2 {
+        -webkit-transform: rotate(-90deg) translate(-7px, -7px);
+        transform: rotate(-90deg) translate(-7px, 5px);
+        background-color: green;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #f1f1f1;
+}
