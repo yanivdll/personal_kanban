@@ -1,13 +1,16 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
-from .models import Board, Task, Column
-from django.template import loader
-from .forms import BoardForm, ColumnForm, TaskForm
-from django.views import View, generic
+import json
 import os
+
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import get_object_or_404, redirect, render
+from django.template import loader
 from django.urls import reverse
+from django.views import View, generic
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
+
+from .forms import BoardForm, ColumnForm, TaskForm
+from .models import Board, Column, Task
 
 
 def index(request):
@@ -129,20 +132,6 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
         return Board.objects.get(id=board_id)
 
 
-class TaskUpdate(UpdateView):
-    model = Task
-    template_name = "board/update_task.html"
-    fields = (
-        "__all__"  # Not recommended (potential security issue if more fields added)
-    )
-    # The generic UpdateView expects a `pk` varuable, but I'm passing `task_id` because I also have a `board_id` in the URL, and want to be consistent.
-    pk_url_kwarg = "task_id"
-
-    # Overriding the redirect to a URL on success because I want to go to a dynamic URL based on the board_id.
-    def get_success_url(self):
-        return reverse("board:board", kwargs={"pk": self.kwargs["board_id"]})
-
-
 class TaskDeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     template_name = "board/task_delete.html"
@@ -157,3 +146,18 @@ class TaskDeleteView(LoginRequiredMixin, DeleteView):
     def get_board(self):
         board_id = self.kwargs.get("board_id")
         return Board.objects.get(id=board_id)
+
+
+def update_task_ajax(request):
+    if request.method == "POST":
+        body = json.loads(request.body)
+        task_id = body.get("task_id")
+        column_id = body.get("column_id")
+        try:
+            task = Task.objects.get(pk=task_id)
+            column = Column.objects.get(pk=column_id)
+        except Task.DoesNotExist:
+            return JsonResponse({"status": "error"})
+        task.column = column
+        task.save()
+        return JsonResponse({"status": "success"})

@@ -7,6 +7,8 @@ class Board(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name_plural = "Boards"
@@ -22,6 +24,8 @@ class Board(models.Model):
 class Column(models.Model):
     title = models.CharField(max_length=255)
     board = models.ForeignKey("Board", related_name="columns", on_delete=models.CASCADE)
+    date_creted = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -34,7 +38,7 @@ class Task(models.Model):
         LOW = "L", "Low"
 
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = models.TextField(blank=True, null=True)
     priority = models.CharField(
         max_length=1,
         choices=Priority.choices,
@@ -43,6 +47,8 @@ class Task(models.Model):
     board = models.ForeignKey("Board", related_name="tasks", on_delete=models.CASCADE)
     column = models.ForeignKey("Column", related_name="tasks", on_delete=models.CASCADE)
     task_order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.id} - {self.title}"

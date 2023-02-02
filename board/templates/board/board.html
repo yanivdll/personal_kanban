@@ -1,5 +1,6 @@
 {% extends "base.html" %} 
 {% load static %}
+
 {% block title %}
     {{board.name}}
 {% endblock %}
@@ -9,7 +10,7 @@
 <div class="container">
     {% for column in board.columns.all %}
 
-            <div class="column">
+            <div class="column" id="{{column.pk}}" >
                 <div class="flex-container column-header">
                     <h3>{{column.title}}</h3>
                     <a href="{% url "board:create_task" board.pk column.pk %}" >
@@ -20,7 +21,7 @@
                     </a>
                 </div>
                 {% for task in column.tasks.all %}
-                    <a href="{% url "board:update_task" board.pk task.pk %}"><div class="task card">{{task.title}}</div></a>
+                    <div class="task card" id = "{{task.id}}"draggable=true><a href="{% url "board:update_task" board.pk task.pk %}">{{task.title}}</a></div>
                 {% endfor %}
             </div>
     {% endfor %}
@@ -29,5 +30,6 @@
     </div></div>
 </div>
 
+<script src="{% static 'board/js/board.js' %}"></script>
 
 {% endblock %}

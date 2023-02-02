@@ -3,10 +3,12 @@
 
 {% block content %}
 <div class="container">
-    <form method="post">
-    {% csrf_token %}
-        {{form.as_p}}
-    <input type="submit" value="update">
-    </form>
+    <div class="center-page">
+        <form method="post">
+        {% csrf_token %}
+            {{form.as_p}}
+        <input type="submit" value="update">
+        </form>
+    </div>
 </div>
 {% endblock content %}

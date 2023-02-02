@@ -1,9 +1,15 @@
 from django.urls import path
+
 from . import views
 
 app_name = "board"
 urlpatterns = [
     path("", views.index, name="index"),
+    path(
+        "update_task_ajax/",
+        views.update_task_ajax,
+        name="update_task_ajax",
+    ),
     path("boards/", views.BoardListView.as_view(), name="boards"),
     path("board/<int:pk>/", views.BoardDetailView.as_view(), name="board"),
     path("board/create/", views.BoardCreateView.as_view(), name="create_board"),

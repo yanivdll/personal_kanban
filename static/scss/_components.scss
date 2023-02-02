@@ -48,3 +48,14 @@
     flex-wrap: wrap;
     background-color: #f1f1f1;
 }
+
+.center-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 3px;
+}

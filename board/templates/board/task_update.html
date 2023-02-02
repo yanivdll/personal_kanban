@@ -3,18 +3,15 @@
 
 {% block content %}
 <div class="container">
-    <form method="post">
-    {% csrf_token %}
-        {{form.as_p}}
-            <div class="container">
-                <input type="submit" value="update">
-                <button><a href="{% url "board:delete_task" task.board.pk task.pk %}">Delete task</a></button>
-            </div>
-
-    
-    </form>
-
-
+    <div class="center-page">
+        <form method="post">
+        {% csrf_token %}
+            {{form.as_p}}
+                <div class="form-button">
+                    <button><a href="{% url "board:delete_task" task.board.pk task.pk %}">Delete task</a></button>
+                    <input type="submit" value="update">
+                </div>
+        </form>
+    </div>
 </div>
-
 {% endblock content %}

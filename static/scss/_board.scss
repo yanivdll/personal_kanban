@@ -1,11 +1,3 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1em;
-    margin: $margin-large $margin-small;
-}
-
 .column {
     width: 100%;
     margin: 0;
@@ -20,4 +12,81 @@
     background-color: #eeeeee;
     margin-top: 0;
     padding: $padding-small $padding-medium;
+}
+
+
+
+form p {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+}
+
+form label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+}
+
+form input,
+form select,
+form textarea {
+    flex: 2;
+    border-radius: 4px;
+}
+
+.form-row>button {
+    background: gray;
+    color: white;
+    border: 0;
+}
+
+.form-button {
+    display: flex;
+    justify-content: end; //place button on the right
+    padding: .5em;
+}
+
+form input[type="submit"] {
+    background: #198754;
+    color: white;
+    border: 0;
+    flex: 2;
+}
+
+.task.card {
+    /* background-color: rgb(133, 236, 216); */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: move;
+}
+
+.task.card:hover {
+    // background-color: rgb(133, 236, 216);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.column.over {
+    border: 3px dotted #666;
+}
+
+.to-do-task {
+    background-color: rgb(241, 171, 33);
+}
+
+.in-progress-task {
+    background-color: rgb(212, 212, 57);
+}
+
+.done-task {
+    background-color: rgb(59, 241, 84);
+}
+
+label {
+    font-weight: bold;
+    display: inline-block;
 }

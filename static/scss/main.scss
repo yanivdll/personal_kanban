@@ -31,36 +31,3 @@ header ul {
     margin: 0;
     align-items: center;
 }
-
-.task.card {
-    /* background-color: rgb(133, 236, 216); */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
-.task.card:hover {
-    background-color: rgb(133, 236, 216);
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
-.to-do-task {
-    background-color: rgb(241, 171, 33);
-}
-
-.in-progress-task {
-    background-color: rgb(212, 212, 57);
-}
-
-.done-task {
-    background-color: rgb(59, 241, 84);
-}
-
-label {
-    font-weight: bold;
-    display: inline-block;
-}
